@@ -1,0 +1,25 @@
+{
+  "name": "imus",
+  "version": "1.0.0",
+  "description": "imus provides simple store functionality.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "store"
+  ],
+  "author": "Larsonnn",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
