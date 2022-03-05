@@ -20,14 +20,14 @@ Listener
 import { useEffect, useState } from "react";
 import { subscribe, getStore } from "imus";
 
-export default function Test1() {
-    const [text, setText] = useState(getStore('text1') || '');
-    const unsubscribe = subscribe('text1', setText);
+export default function TextComponent() {
+    const [text, setText] = useState(getStore('myText') || '');
+    const unsubscribe = subscribe('myText', setText);
 
     useEffect(() => {
         return unsubscribe
     })
-    return <><h1>Text1</h1><p>{text}</p></>
+    return<p>{text}</p>
 }
 ```
 
@@ -35,10 +35,8 @@ Dispatcher
 ```jsx
 import { dispatch } from "imus";
 
-export default function Test2() {
-    return <>
-        <input onChange={(e) => dispatch('text1', e.target.value)} type="text"/>
-    </>
+export default function InputComponent() {
+    return <input onChange={(e) => dispatch('myText', e.target.value)} type="text"/>
 }
 ```
 
