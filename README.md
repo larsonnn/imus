@@ -3,6 +3,11 @@
 > imus is work in progress. Be aware of breaking changes and do not use in production yet.
 <hr>
 
+### ToDo's
+
+- connector (connect another storage, ex.: when using on server)
+- createStore method to split storage
+
 ### Installation
 ```sh
 npm install imus
