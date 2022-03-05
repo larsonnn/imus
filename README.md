@@ -1,5 +1,5 @@
 # imus, immutable store [WIP]
-## imus provides simple store functionality, it is not a state machine
+## imus provides simple store functionality, it is not a state machine. It's good enough in most cases.
 > imus is work in progress. Be aware of breaking changes and do not use in production yet.
 <hr>
 
