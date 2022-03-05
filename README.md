@@ -27,7 +27,7 @@ export default function TextComponent() {
     useEffect(() => {
         return unsubscribe
     })
-    return<p>{text}</p>
+    return <p>{text}</p>
 }
 ```
 
@@ -43,5 +43,5 @@ export default function InputComponent() {
 
 ### Build
 ```
-tsc --esModuleInterop
+tsc
 ```
