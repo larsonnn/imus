@@ -14,7 +14,6 @@ function _unsubscribe(key: string, callback: () => {}) {
 
 export function dispatch(key: string, value: any) {
     store[key] = _.cloneDeep(value);
-    console.log("STORE",store);
     connector.setter(store);
     if(!listeners[key]) return;
     listeners[key].forEach(
@@ -40,7 +39,7 @@ export function setConnector(setter: () => {}, getter: () => {}) {
     connector.getter = getter;
     const fromGetter = getter();
     if(!fromGetter) return;
-    
+
     Object.keys(fromGetter).forEach(key => {
         store[key] = fromGetter[key];
     })
