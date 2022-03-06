@@ -8,7 +8,7 @@ function _isSet(key: string) {
     return listeners[key] && listeners[key]?.has
 }
 
-function _unsubscribe(key: string, callback: () => {}) {
+function _unsubscribe(key: string, callback: (value: any) => {}) {
     if(_isSet(key)) listeners[key].delete(callback);
 }
 
@@ -21,10 +21,14 @@ export function dispatch(key: string, value: any) {
     );
 }
 
-export function subscribe(key: string, callback: () => {}) {
+export function subscribe(key: string, callback: (value: any) => {}) {
     if(!_isSet(key)) listeners[key] = new Set();
     if(listeners[key].has(callback)) return;
+    
     listeners[key].add(callback);
+    
+    if(store[key] !== undefined) callback(store[key]);
+
     return () => _unsubscribe(key, callback);
 }
 

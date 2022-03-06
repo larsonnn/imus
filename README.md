@@ -21,8 +21,8 @@ import { useEffect, useState } from "react";
 import { subscribe, getStore } from "imus";
 
 export default function TextComponent() {
-    const [text, setText] = useState(getStore('myText') || '');
-    const unsubscribe = subscribe('myText', setText);
+    const [text, setText] = useState(getStore('');
+    const unsubscribe = subscribe('myText', setText); // when key already exist, subscribe will call setText directly
 
     useEffect(() => {
         return unsubscribe
