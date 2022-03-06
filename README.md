@@ -24,10 +24,12 @@ export default function TextComponent() {
     const [text, setText] = useState('');
     const unsubscribe = subscribe('myText', setText); // when key already exist, subscribe will call setText directly
 
+    const [initText] = useState(getStore('myText') || '') // will also get the value, but wouldnt be updated
+
     useEffect(() => {
         return unsubscribe
     })
-    return <p>{text}</p>
+    return <p>{text}, {initText}</p>
 }
 ```
 
