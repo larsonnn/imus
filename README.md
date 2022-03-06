@@ -54,4 +54,5 @@ setConnector(setter, getter);
 ### Build
 ```
 tsc
+npx webpack
 ```
