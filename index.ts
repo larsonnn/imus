@@ -17,7 +17,7 @@ export function dispatch(key: string, value: any) {
     connector.setter(store);
     if(!listeners[key]) return;
     listeners[key].forEach(
-        (listener: (arg0: any) => any) => listener(store[key])
+        (listener: (arg0: any) => any) => listener(_.cloneDeep(store[key]))
     );
 }
 
@@ -27,13 +27,13 @@ export function subscribe(key: string, callback: (value: any) => {}) {
     
     listeners[key].add(callback);
     
-    if(store[key] !== undefined) callback(store[key]);
+    if(store[key] !== undefined) callback(_.cloneDeep(store[key]));
 
     return () => _unsubscribe(key, callback);
 }
 
 export function getStore(key: string | undefined) {
-    if(key === undefined) return _.cloneDeep(store);
+    if(key === undefined || key === '') return _.cloneDeep(store);
     return _.cloneDeep(store[key]);
 
 }
@@ -45,6 +45,6 @@ export function setConnector(setter: () => {}, getter: () => {}) {
     if(!fromGetter) return;
 
     Object.keys(fromGetter).forEach(key => {
-        store[key] = fromGetter[key];
+        store[key] = _.cloneDeep(fromGetter[key]);
     })
 }
