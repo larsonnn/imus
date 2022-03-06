@@ -40,6 +40,14 @@ export default function InputComponent() {
 }
 ```
 
+### using connector, for example localStorage
+
+```js
+const setter = (store) => localStorage.setItem('store', JSON.stringify(store));
+const getter = () => JSON.parse(localStorage.getItem('store'))
+
+setConnector(setter, getter);
+```
 
 ### Build
 ```
