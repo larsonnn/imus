@@ -14,9 +14,7 @@ module.exports = {
       extensions: ['.tsx', '.ts', '.js'],
     },
     output: {
-        library: 'imus',
-        libraryTarget: 'umd',
-        libraryExport: 'default',
+      library: 'Imus',
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
