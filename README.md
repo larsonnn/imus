@@ -51,6 +51,39 @@ const getter = () => JSON.parse(localStorage.getItem('store'))
 setConnector(setter, getter);
 ```
 
+<hr>
+
+### Using HTML
+- at least version 1.2.2
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <input onkeyup="updateText()" id="textInput" type="text" />
+    <p id="textField"></p>
+</head>
+<body>
+    <script src="https://unpkg.com/imus@1.2.2/dist/bundle.js">
+    </script>
+    <script>
+        const unsubscribe = Imus.subscribe('myText', (value) => {
+            document.getElementById('textField').innerHTML = value;
+        });
+
+        function updateText() {
+            Imus.dispatch('myText', document.getElementById('textInput').value);
+        }
+
+    </script>
+</body>
+</html>
+```
+
+
 ### Build
 ```
 tsc
