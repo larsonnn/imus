@@ -54,7 +54,7 @@ setConnector(setter, getter);
 <hr>
 
 ### Using HTML
-- at least version 1.2.2
+- at least version 1.3.0
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +67,7 @@ setConnector(setter, getter);
     <p id="textField"></p>
 </head>
 <body>
-    <script src="https://unpkg.com/imus@1.2.2/dist/bundle.js">
+    <script src="https://unpkg.com/imus@1.3.0/dist/bundle.js">
     </script>
     <script>
         const unsubscribe = Imus.subscribe('myText', (value) => {
