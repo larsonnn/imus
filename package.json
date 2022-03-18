@@ -15,6 +15,10 @@
   ],
   "author": "Larsonnn",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larsonnn/imus"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.179",
     "tslint": "^6.1.3",
